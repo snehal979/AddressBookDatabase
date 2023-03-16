@@ -51,3 +51,7 @@ UPDATE AddressBookTable SET type ='Other' WHERE firstname ='Lata';
 
 --Uc10 Ability to get number of contact persons
 SELECT type,COUNT(type) AS NumberOfContactPersons FROM AddressBookTable GROUP BY type;
+
+--Uc11 Ability to add person to both Friend and Family
+INSERT INTO AddressBookTable(firstname,lastnames,address,city,state,zip,phonenumber,email,type)VALUES('Vaibhav','Bansod','Plotno12','Sindewahi','Maha','234523','9877688788','snehal@gmail','Family');
+INSERT INTO AddressBookTable(firstname,lastnames,address,city,state,zip,phonenumber,email,type)VALUES('Vaibhav','Bansod','Plotno12','Sindewahi','Maha','234523','9877688788','snehal@gmail','Friend');
