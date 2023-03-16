@@ -34,3 +34,8 @@ SELECT * FROM AddressBookTable WHERE state='Maha';
 --Uc7 size of table by city or state
 SELECT COUNT(*) FROM AddressBookTable WHERE city LIKE'Nagpur';
 SELECT COUNT(*) FROM AddressBookTable WHERE state LIKE'UP';
+
+--UC8 retrieve data sorted alphabetically by city Ascending order for given city
+SELECT * FROM AddressBookTable WHERE city='Nagpur' ORDER BY firstname ASC;
+--UC8 retrieve data sorted alphabetically by city descending order
+SELECT * FROM AddressBookTable WHERE city='Nagpur' ORDER BY firstname DESC;
