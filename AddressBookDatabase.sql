@@ -39,3 +39,12 @@ SELECT COUNT(*) FROM AddressBookTable WHERE state LIKE'UP';
 SELECT * FROM AddressBookTable WHERE city='Nagpur' ORDER BY firstname ASC;
 --UC8 retrieve data sorted alphabetically by city descending order
 SELECT * FROM AddressBookTable WHERE city='Nagpur' ORDER BY firstname DESC;
+
+--UC9 Ability to identify each Address Book with name and Type. 
+ALTER TABLE AddressBookTable ADD type VARCHAR(10);  
+UPDATE AddressBookTable SET type ='Family' WHERE firstname ='Snehal';
+UPDATE AddressBookTable SET type ='Friend' WHERE firstname ='Raju';
+
+UPDATE AddressBookTable SET type ='Profession' WHERE firstname ='Mayur';
+
+UPDATE AddressBookTable SET type ='Other' WHERE firstname ='Lata';
