@@ -30,3 +30,7 @@ DELETE FROM AddressBookTable WHERE firstname = 'Snehu';
 --Uc 6 retrive person belong to city or state
 SELECT * FROM AddressBookTable WHERE city='Nagpur';
 SELECT * FROM AddressBookTable WHERE state='Maha';
+
+--Uc7 size of table by city or state
+SELECT COUNT(*) FROM AddressBookTable WHERE city LIKE'Nagpur';
+SELECT COUNT(*) FROM AddressBookTable WHERE state LIKE'UP';
