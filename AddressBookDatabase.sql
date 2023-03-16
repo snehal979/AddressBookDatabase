@@ -20,3 +20,6 @@ INSERT INTO AddressBookTable(firstname,lastnames,address,city,state,zip,phonenum
 
 --Display
 SELECT * FROM AddressBookTable
+
+--Uc 4 Edit the contact by name
+UPDATE AddressBookTable SET state = 'Maharastra' WHERE firstname ='Snehal';
