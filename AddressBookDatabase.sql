@@ -48,3 +48,6 @@ UPDATE AddressBookTable SET type ='Friend' WHERE firstname ='Raju';
 UPDATE AddressBookTable SET type ='Profession' WHERE firstname ='Mayur';
 
 UPDATE AddressBookTable SET type ='Other' WHERE firstname ='Lata';
+
+--Uc10 Ability to get number of contact persons
+SELECT type,COUNT(type) AS NumberOfContactPersons FROM AddressBookTable GROUP BY type;
