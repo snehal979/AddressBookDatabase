@@ -26,3 +26,7 @@ UPDATE AddressBookTable SET state = 'Maharastra' WHERE firstname ='Snehal';
 
 --Uc5 Delect the contact by name
 DELETE FROM AddressBookTable WHERE firstname = 'Snehu';
+
+--Uc 6 retrive person belong to city or state
+SELECT * FROM AddressBookTable WHERE city='Nagpur';
+SELECT * FROM AddressBookTable WHERE state='Maha';
