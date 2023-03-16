@@ -23,3 +23,6 @@ SELECT * FROM AddressBookTable
 
 --Uc 4 Edit the contact by name
 UPDATE AddressBookTable SET state = 'Maharastra' WHERE firstname ='Snehal';
+
+--Uc5 Delect the contact by name
+DELETE FROM AddressBookTable WHERE firstname = 'Snehu';
