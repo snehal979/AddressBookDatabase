@@ -54,4 +54,46 @@ SELECT type,COUNT(type) AS NumberOfContactPersons FROM AddressBookTable GROUP BY
 
 --Uc11 Ability to add person to both Friend and Family
 INSERT INTO AddressBookTable(firstname,lastnames,address,city,state,zip,phonenumber,email,type)VALUES('Vaibhav','Bansod','Plotno12','Sindewahi','Maha','234523','9877688788','snehal@gmail','Family');
-INSERT INTO AddressBookTable(firstname,lastnames,address,city,state,zip,phonenumber,email,type)VALUES('Vaibhav','Bansod','Plotno12','Sindewahi','Maha','234523','9877688788','snehal@gmail','Friend');
+INSERT INTO AddressBookTable(firstname,lastnames,address,city,state,zip,phonenumber,email,type)VALUES('Vaibhav','Bansod','Plotno12','Sindewahi','Maha','234523','9877688788','snehal@gmail','Friend')
+
+--Uc12 ER Diagram for Address Book Service DB
+DROP TABLE AddressBookTable
+/*Key attribute – Uniquely Identified the Entity e.g.Id
+• Composite attribute – is a combination of other attributes e.g. employee address
+• Multivalued attribute – hold multiple values like the phone number
+• Derived attribute – value is dynamic and derived from another attribute e.g.
+*/
+--1.PersonalDatails Table, 
+-- 2.AddressType Table, 
+
+--PersonalDetails TABLE
+CREATE TABLE PersonDetail(
+Id INT PRIMARY KEY IDENTITY(1,1),
+Name VARCHAR(150) NOT NULL,
+Gender VARCHAR(10) NOT NULL,
+Mobile VARCHAR(10) DEFAULT('1234567890'),
+Email VARCHAR(20)
+);
+------------Data insert----------------
+INSERT INTO PersonDetail(Name,Gender,Mobile,Email)VALUES('Snehal','Female','9593573967','SNEHAL@HS');
+INSERT INTO PersonDetail(Name,Gender,Mobile,Email)VALUES('Mayur','Male','9593573968','mayu@g');
+INSERT INTO PersonDetail(Name,Gender,Mobile,Email)VALUES('Raju','Male','9593553967','raju@gg');
+INSERT INTO PersonDetail(Name,Gender,Mobile,Email)VALUES('Lata','Female','8593573967','lata@hh');
+INSERT INTO PersonDetail(Name,Gender,Mobile,Email)VALUES('Vaibhav','Male','7593573967','vaibhav@gg');
+SELECT * FROM PersonDetail
+-------AddressType Table, ------
+CREATE TABLE Addresss(
+AddressN VARCHAR(50),
+City VARCHAR(18) NOT NULL,
+State VARCHAR(19) NOT NULL,
+Zip VARCHAR(6),
+Id INT FOREIGN KEY REFERENCES PersonDetail(Id)
+);
+INSERT INTO Addresss VALUES('Plot3','Sindewahi','Maha','454661',1);
+INSERT INTO Addresss VALUES('Plot4','Nagpur','Maha','454661',2);
+INSERT INTO Addresss VALUES('Plot5','Ramdegi','UP','454661',3);
+INSERT INTO Addresss VALUES('Plot7','Sindewahi','UP','454661',4);
+INSERT INTO Addresss VALUES('Plot3','Mule','Maha','454661',5);
+
+SELECT * FROM PersonDetail
+INNER JOIN Addresss ON PersonDetail.Id = Addresss.Id;
