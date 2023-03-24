@@ -97,3 +97,26 @@ INSERT INTO Addresss VALUES('Plot3','Mule','Maha','454661',5);
 
 SELECT * FROM PersonDetail
 INNER JOIN Addresss ON PersonDetail.Id = Addresss.Id;
+--UC13
+--UC13/Uc 6 retrive person belong to city or state
+SELECT * FROM PersonDetail
+INNER JOIN Addresss ON PersonDetail.Id = Addresss.Id WHERE city='Nagpur';
+SELECT * FROM PersonDetail
+INNER JOIN Addresss ON PersonDetail.Id = Addresss.Id WHERE state='Maha';
+
+--UC13/Uc7 size of table by city or state
+SELECT COUNT(*) FROM PersonDetail
+INNER JOIN Addresss ON PersonDetail.Id = Addresss.Id WHERE city LIKE'Nagpur';
+SELECT COUNT(*) FROM PersonDetail
+INNER JOIN Addresss ON PersonDetail.Id = Addresss.Id WHERE state LIKE'UP';
+
+--UC13//UC8 retrieve data sorted alphabetically by city Ascending order
+SELECT * FROM PersonDetail
+INNER JOIN Addresss ON PersonDetail.Id = Addresss.Id WHERE city='Nagpur' ORDER BY Name ASC;
+--UC13//UC8 retrieve data sorted alphabetically by city descending order
+SELECT * FROM PersonDetail
+INNER JOIN Addresss ON PersonDetail.Id = Addresss.Id WHERE city='Nagpur' ORDER BY Name DESC;
+
+--UC13//-Uc10 Ability to get number of contact persons
+SELECT COUNT(*) FROM PersonDetail
+INNER JOIN Addresss ON PersonDetail.Id = Addresss.Id 
